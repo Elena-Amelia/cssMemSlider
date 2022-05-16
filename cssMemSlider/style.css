@@ -46,7 +46,6 @@ input[name="slide"] {
   width: 400%;
   height: 90%; 
   display: flex;
-  background-color: rgba(138, 43, 226, 0.3);
 }
 
 @media screen and (max-width: 768px) {
@@ -75,7 +74,7 @@ img {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 0.2em;
+  padding: 2em 0.3em;
 }
 
 @media screen and (max-width: 768px) {
@@ -114,6 +113,7 @@ img {
 @media screen and (max-width: 768px) {
   .txt {
     font-size: 1em;
+    line-height: 2em;
     align-self: flex-start;
   }
 }
