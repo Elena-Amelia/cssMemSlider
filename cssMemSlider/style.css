@@ -1,40 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100vw;
+  height: 100vh; 
   background-color: plum;
   color: blueviolet;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-.container{
-  /* max-width: 50%;
-  max-height: 60%;
-  min-width: 32em; */
+.container {
   width: 100%;
   /* height: 100%; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: 0.3s;
-  /* padding: 0 5%; */
 }
 
 h1 {
   text-align: center;
 }
 
-/* @media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .container {
     min-width: 1em;
     max-width: 90%;
@@ -42,20 +35,26 @@ h1 {
     margin: 0 1em;
     height: auto;
   }
-} */
+}
+
+input[name="slide"] {
+  visibility: hidden;
+  height: 0%;
+  width: 0%;
+}
 
 .slider {
-  
   width: 400%;
   height: 90%; 
   display: flex;
+  background-color: blueviolet;
 }
 
-/* @media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .slider {
     max-height: 80%;
   }
-} */
+}
 
 .slide {
   width: 25%;
@@ -74,29 +73,30 @@ img {
   width: 100%;
   height: 10%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 2% 23%;
+  padding: 2% 2%;
 }
 
-/* @media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .nav {
     flex-direction: column-reverse;
     justify-content: space-evenly;
     height: 20%;
   }
-} */
+}
 
-.text-container {
+.text-cont {
   width: 25%;
   overflow: hidden;
 }
 
-/* @media screen and (max-width: 550px) {
-  .text-container {
+@media screen and (max-width: 768px) {
+  .text-cont {
     width: 100%;
   }
-} */
+}
 
 .text {
   width: 400%;
@@ -107,16 +107,18 @@ img {
 
 .txt {
   width: 25%;
-  font-family: 'Roboto', sans-serif;
   font-size: 1.3em;
+  font-weight: bold;
   transition: 1s;
 }
 
-/* @media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .txt {
+    width: 50%;
     font-size: 1em;
+    align-self: flex-start;
   }
-} */
+}
 
 .btns {
   max-width: 9em;
@@ -126,16 +128,9 @@ img {
   justify-content: space-between;
 }
 
-/* @media screen and (max-width: 550px) {
-  .txt {
-    max-width: 100%;
-  }
-} */
-
 label {
-  
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
   transition: ease-in-out 0.3s;
   cursor: pointer;
   display: flex;
@@ -145,27 +140,21 @@ label {
 
 .btn {
   display: block;
-  height: 1em;
   width: 1em;
+  height: 1em;
   background-color: blueviolet;
   border-radius: 50%;
   transition: ease-in-out 0.3s;
 }
 
 label:hover .btn {
-  background-color: rgb(185, 248, 211);
+  background-color: lavender;
   transform: scale(1.2);
   box-shadow: 0em 0em 0.2em black;
 }
 
 label:active .btn {
   transform: scale(0.8);
-}
-
-input[name="slide"] {
-  visibility: hidden;
-  height: 0%;
-  width: 0%;
 }
 
 #slide1:checked ~ .nav > .btns > label[for="slide1"] > .btn,
@@ -191,16 +180,15 @@ input[name="slide"] {
 }
 
 
-
-#slide1:checked ~ .nav > .text-container > .text > .txt1 {
+#slide1:checked ~ .nav > .text-cont > .text > .txt1 {
   margin-left: 0;
 }
-#slide2:checked ~ .nav > .text-container > .text > .txt1 {
+#slide2:checked ~ .nav > .text-cont > .text > .txt1 {
   margin-left: -25%;
 }
-#slide3:checked ~ .nav > .text-container > .text > .txt1{
+#slide3:checked ~ .nav > .text-cont > .text > .txt1{
   margin-left: -50%;
 }
-#slide4:checked ~ .nav > .text-container > .text > .txt1{
+#slide4:checked ~ .nav > .text-cont > .text > .txt1{
   margin-left: -75%;
 }
