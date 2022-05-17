@@ -83,6 +83,7 @@ img {
   line-height: 1.7em ;
   font-weight: bold;
   transition: 1s;
+  align-self: center;
 }
 
 .btns {
