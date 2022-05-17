@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: plum;
+  color: blueviolet;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+input[name="slide"] {
+  visibility: hidden;
+  height: 0%;
+  width: 0%;
+}
+
+.slider {
+  width: 400%;
+  height: 90%; 
+  display: flex;
+}
+
+.slide {
+  width: 25%;
+  transition: 1s;
+  display: flex;
+}
+
+img {
+  object-fit: cover;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1em;
+}
+
+.nav {
+  max-width: 80em;
+  width: 100%;
+  height: 10%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 0.5em;
+}
+
+.text-cont {
+  width: 70%;
+  overflow: hidden;
+}
+
+.text {
+  width: 400%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.txt {
+  width: 25%;
+  font-size: 2em;
+  line-height: 1.7em ;
+  font-weight: bold;
+  transition: 1s;
+  align-self: center;
+}
+
+.btns {
+  max-width: 12em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  height: 3em;
+  width: 3em;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: blueviolet;
+  border-radius: 50%;
+  transition: ease-in-out 0.3s;
+}
+
+label:hover .btn {
+  background-color: lavender;
+  transform: scale(1.2);
+  box-shadow: 0em 0em 0.2em black;
+}
+
+label:active .btn {
+  transform: scale(0.8);
+}
+
+#slide1:checked ~ .nav > .btns > label[for="slide1"] > .btn,
+#slide2:checked ~ .nav > .btns > label[for="slide2"] > .btn,
+#slide3:checked ~ .nav > .btns > label[for="slide3"] > .btn,
+#slide4:checked ~ .nav > .btns > label[for="slide4"] > .btn
+  {
+  background-color: hotpink;
+  transform: scale(1.1);
+}
+
+#slide1:checked ~ .slider > .img1 {
+  margin-left: 0;
+}
+#slide2:checked ~ .slider > .img1 {
+  margin-left: -25%;
+}
+#slide3:checked ~ .slider > .img1 {
+  margin-left: -50%;
+}
+#slide4:checked ~ .slider > .img1 {
+  margin-left: -75%;
+}
+
+
+#slide1:checked ~ .nav > .text-cont > .text > .txt1 {
+  margin-left: 0;
+}
+#slide2:checked ~ .nav > .text-cont > .text > .txt1 {
+  margin-left: -25%;
+}
+#slide3:checked ~ .nav > .text-cont > .text > .txt1{
+  margin-left: -50%;
+}
+#slide4:checked ~ .nav > .text-cont > .text > .txt1{
+  margin-left: -75%;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 1em;
+    max-width: 90%;
+    height: auto;
+  }
+  .slider {
+    max-height: 80%;
+  }
+  .nav {
+    max-width: 80em;
+    width: 100%;
+     height: 20%;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+  }
+  .txt {
+    font-size: 1.5em;
+    line-height: 2em;
+    align-self: flex-start;
+  }
+  .text-cont {
+    width: 100%;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .btns {
+    max-width: 9em;
+  }
+  .btn {
+    width: 1em;
+    height: 1em;
+  }
+  label {
+    height: 2em;
+  width: 2em;
+  }
+}
